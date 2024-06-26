@@ -80,49 +80,43 @@ function entrance() {
       // Timeline
       const tl = gsap.timeline();
 
+      console.log(profileEntryText.lines);
+
       tl
       .set('.preloader .preloader-wrap .preloader-text .line-wrapper', {
         overflow: 'initial',
       })
-      .to(preloaderTextLines, {
-        y: -100,
-        opacity: 0,
-        ease: 'power4.inOut',
-        duration: 2,
-      })
       .to('.preloader-wrap', {
         yPercent: -100,
-        rotation: 0.01,
-        ease: "expo.inOut",
-        duration: 1.5,
-      }, '-=1.8')
+        ease: "power4.inOut",
+        duration: 1.3,
+      }, )
       .to('.circ .shape', {
         height: 0,
-        delay: 0.8,
-        ease: "expo.inOut",
+        duration: 1.3,
+        ease: "power4.inOut",
       }, '<')
       .from(profileEntryText.chars, {
         yPercent: 100,
         ease: 'power4.inOut',
         stagger: 0.03,
-        duration: .5,
-      }, '-=1.4')
+      }, '-=0.3')
       .to('.hero .hero-image .mask', {
         width: 0,
         ease: 'power4.inOut',
         duration: .7,
-        delay: .2,
       }, '<')
       .from(navItems.lines, {
         yPercent: -100,
         ease: 'power4.inOut',
-        duration: .5,
-        delay: .4,
+        duration: 1,
+        delay: .3,
       }, '<')
       .to('.hero .hero-image .circleText', {
         opacity: 1,
         ease: 'power4.inOut',
-      });
+        delay: 1,
+      }, '<');
 
     }
   });
@@ -137,9 +131,13 @@ function entrance() {
   });
 
   heroTl
+  .set('.hero h1', {
+    yPercent: -50,
+    x: 0,
+    y: 0,
+  })
   .to('.hero h1', {
     x: -100 * 2,
-    yPercent: -50,
   });
 
 }
