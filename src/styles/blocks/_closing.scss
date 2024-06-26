@@ -69,6 +69,7 @@
               right: 10px;
               height: 20px;
               @include mt(2px);
+              transform-origin: center;
             }
 
             path {
