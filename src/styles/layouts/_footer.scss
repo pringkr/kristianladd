@@ -1,0 +1,184 @@
+footer.content-info {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  .wrap {
+    align-items: center;
+    background: $klwhite;
+    @include py(25vh);
+    position: relative;
+    @include media-breakpoint-down(sm) {
+      @include pt(100px);
+      @include pb(130px);
+    }
+  }
+
+  h2 {
+    text-transform: initial;
+    text-align: center;
+    color: $klblack;
+    @include mb(10px);
+    @include media-breakpoint-down(lg) {
+      @include mb(20px);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    @include pl(0);
+    @include mb(0);
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include px(20px);
+    @include media-breakpoint-down(sm) {
+      @include px(10px);
+    }
+
+    li {
+      text-transform: uppercase;
+      color: $klblack;
+
+      @include media-breakpoint-down(lg) {
+        font-size: rem-calc(14);
+      }
+
+      button {
+        background: none;
+        @include p(0);
+        border: none;
+        text-transform: uppercase;
+        color: $klblack;
+
+        @include media-breakpoint-down(lg) {
+          font-size: rem-calc(14);
+        }
+      }
+    }
+
+  }
+
+  .btn {
+    color: $klblack;
+    border-color: $klblack;
+    border-radius: 100px;
+    position: relative;
+
+    @include media-breakpoint-down(lg) {
+      width: auto;
+      @include py(10px);
+      @include px(20px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include py(30px);
+      @include px(30px);
+      font-size: rem-calc(24);
+    }
+  }
+
+  .marquee {
+    background: $klwhite;
+    color: $klblack;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 6vw;
+    position: relative;
+    overflow: hidden;
+    @include mt(200px);
+
+    .marquee-inner-wrapper {
+      -webkit-font-smoothing: antialiased;
+      width: fit-content;
+      display: flex;
+      flex: auto;
+      flex-direction: row;
+
+      .marquee-text {
+        flex-shrink: 0;
+        padding: 0 4px;
+
+        span {
+          position: relative;
+          padding-right: 90px;
+
+          svg {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// footer {
+//   @include pt(50vh);
+//   @include pb(20px);
+//   position: relative;
+//   overflow: hidden;
+//   min-height: 100vh;
+//   background: $white;
+//   position: sticky;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+
+//   >svg {
+//     position: absolute;
+//     left: 50%;
+//     z-index: -1;
+//     width: 100%;
+//     opacity: .3;
+//   }
+
+//   h2 {
+//     text-align: center;
+//     @include mb(0);
+//     text-transform: uppercase;
+//     font-size: 8vw;
+//   }
+
+//   h3 {
+//     color: $klblack;
+//     @include mb(0);
+//     text-transform: uppercase;
+//     font-size: $font-size-base;
+//   }
+
+//   .buttons {
+//     @include mt(80px);
+
+//     .btn {
+//       color: $klblack;
+//       border-color: $klblack;
+//       border-radius: 100px;
+//       position: relative;
+
+//       @include media-breakpoint-down(lg) {
+//         width: auto
+//       }
+
+//       @include media-breakpoint-up(lg) {
+//         @include py(30px);
+//         @include px(30px);
+//         font-size: rem-calc(24);
+//       }
+//     }
+//   }
+
+//   .copyright {
+//     @include mt(300px);
+//   }
+
+// }

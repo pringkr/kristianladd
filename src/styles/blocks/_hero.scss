@@ -1,0 +1,129 @@
+.hero {
+  min-height: 100vh;
+  @include pb(120px);
+  overflow: hidden;
+
+  .container-fluid {
+    align-items: flex-end;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+
+    .hero-image {
+      position: absolute;
+      height: 60vh;
+      bottom: 0;
+      right: 0;
+      @include mb(0);
+      right: 20px;
+      width: 30vw;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include media-breakpoint-down(lg) {
+        width: 60vw;
+        height: 60vh;
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: 40vh;
+      }
+
+      .mask {
+        background: $klblack;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      figure {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(1);
+        }
+      }
+
+
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 24vw;
+      letter-spacing: rem-calc(-6px);
+      white-space: nowrap;
+      position: absolute;
+      @include mb(0);
+      top: 50%;
+      transform: translateY(-50%);
+      height: 31vw;
+      left: 0;
+      @include media-breakpoint-down(lg) {
+        height: auto;
+        font-size: 45vw;
+      }
+
+      .char-wrapper {
+        overflow: hidden;
+        display: inline-block;
+      }
+
+      .line-wrapper {
+        height: 100%;
+
+        .line {
+          height: 100%;
+
+          .word {
+            height: 100%;
+
+            .char {
+              height: 100%;
+            }
+          }
+        }
+      }
+
+    }
+
+    .circleText {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      overflow: visible;
+      transform-origin: center center;
+      stroke-opacity: 0.5;
+      bottom: -20px;
+      left: -29px;
+      mix-blend-mode: difference;
+      z-index: 1;
+      animation: hero_rotate_svg 5s linear infinite;
+      opacity: 0;
+
+      text {
+        fill: $klwhite;
+        font-weight: 200;
+        font-size: rem-calc(80);
+        letter-spacing: rem-calc(6);
+      }
+    }
+  }
+}
+
+@keyframes hero_rotate_svg {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}

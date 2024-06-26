@@ -1,0 +1,48 @@
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem-calc($value, $base: null) {
+  @if $base == null {
+    $base: 16px;
+  }
+
+  $base: strip-unit($base);
+  @if not unitless($value) {
+    $value: strip-unit($value);
+  }
+
+  $rem-value: $value / $base;
+
+  @return #{$rem-value}rem;
+}
+
+@function em-calc($value, $base: null) {
+  @if $base == null {
+    $base: 16px;
+  }
+
+  $base: strip-unit($base);
+  @if not unitless($value) {
+    $value: strip-unit($value);
+  }
+
+  $rem-value: $value / $base;
+
+  @return #{$rem-value}em;
+}
+
+@function line-height($value, $base: null) {
+  @if $base == null {
+    $base: 16px;
+  }
+
+  $base: strip-unit($base);
+  @if not unitless($value) {
+    $value: strip-unit($value);
+  }
+
+  $rem-value: $value / $base;
+
+  @return $rem-value;
+}

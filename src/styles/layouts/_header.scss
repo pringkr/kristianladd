@@ -1,0 +1,33 @@
+header.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include py(10px);
+  z-index: 100;
+  mix-blend-mode: difference;
+
+  ul {
+    list-style-type: none;
+    @include pl(0);
+    @include mb(0);
+    display: flex;
+    justify-content: space-between;
+    @include mx(-20px);
+    @include media-breakpoint-down(sm) {
+      @include mx(-30px);
+    }
+
+    li {
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(lg) {
+        font-size: rem-calc(14);
+      }
+
+      .char-wrapper, .line-wrapper {
+        overflow: hidden;
+        display: inline-block;
+      }
+    }
+  }
+}

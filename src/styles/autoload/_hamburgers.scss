@@ -1,0 +1,9 @@
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+
+.hamburger {
+  line-height: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@import "common/variables";
+// @import "common/variables-custom";
+
+
+@import "autoload/bootstrap";
+@import "autoload/lenis";
+@import "autoload/bootstrap-spacer-mixins";
+@import "autoload/functions";
+// @import "autoload/hamburgers";
+// @import "autoload/mixin";
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+
+/** Import theme styles */
+// Global
+@import "common/global";
+@import "common/typography";
+@import "common/types";
+
+// Autoload all blocks
+@import "blocks/preloader";
+@import "blocks/hero";
+@import "blocks/profile";
+@import "blocks/projects";
+@import "blocks/closing";
+
+// Layouts
+@import "layouts/header";
+@import "layouts/footer";

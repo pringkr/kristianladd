@@ -1,0 +1,57 @@
+.link {
+  text-decoration: underline;
+  color: $klblack;
+}
+
+sup {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  @include media-breakpoint-down(lg) {
+    font-size: rem-calc(48);
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: rem-calc(32);
+  }
+}
+
+h4 {
+  font-size: $h4-font-size;
+  @include media-breakpoint-down(lg) {
+    font-size: rem-calc(32);
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: rem-calc(24);
+  }
+}
+
+.body-text-lg {
+  font-size: rem-calc(40);
+  @include media-breakpoint-down(lg) {
+    font-size: rem-calc(32);
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: rem-calc(24);
+  }
+}
+
+.body-text-md {
+  font-size: rem-calc(32);
+}
+
+.body-text-sm {
+  font-size: rem-calc(24);
+  @include media-breakpoint-down(lg) {
+    font-size: rem-calc(20);
+  }
+}

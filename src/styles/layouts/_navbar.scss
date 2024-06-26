@@ -1,0 +1,195 @@
+.navbar {
+  transition: all .25s ease-in-out;
+
+  &:hover {
+    @include media-breakpoint-up(lg) {
+      box-shadow: $navbar-shadow;
+      background-color: $navbar-bg;
+    }
+  }
+
+  /*
+   * WP Admin Bar navbar quickfix
+   */
+  .admin-bar & {
+    top: auto !important;
+  }
+
+  .admin-bar.affixed & {
+    @media (max-width: 600px) {
+      top: 0 !important;
+    }
+  }
+  // :WP Admin Bar navbar quickfix
+
+  .affixed & {
+    box-shadow: $navbar-shadow;
+    background-color: $navbar-bg;
+  }
+
+  &.is-activating,
+  &.is-active {
+    @include media-breakpoint-down(lg) {
+      box-shadow: $navbar-shadow;
+      background-color: $navbar-bg;
+    }
+  }
+
+  .navbar-brand {
+    height: $navbar-brand-height;
+    @include media-breakpoint-down(sm) {
+      height: $navbar-brand-sm-height;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .navbar-toggler {
+    //
+  }
+
+  .navbar-collapse {
+    .navbar-nav {
+      @include media-breakpoint-down(lg) {
+        margin-left: $container-padding-x * -1;
+        margin-right: $container-padding-x * -1;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &.dropdown-active {
+          & > .nav-item:not(.nav-item-dorpdown-active) {
+            display: none;
+          }
+        }
+      }
+
+      & > .nav-item {
+        &.dropdown {
+          & > .nav-link {
+            padding-right: $navbar-nav-link-padding-x + 1.25;
+            @include media-breakpoint-down(lg) {
+              padding-right: $container-padding-x + 1.25;
+            }
+          }
+
+          &.nav-item-dorpdown-active {
+            & > .nav-link {
+              @include media-breakpoint-down(lg) {
+                padding-right: $container-padding-x;
+                padding-left: $container-padding-x + 1.25;
+                color: $primary;
+                text-align: center;
+
+                & + .dropdown-toggle,
+                .dropdown-toggle {
+                  transform: rotate(90deg);
+                  left: $container-padding-x;
+                  right: auto;
+                }
+              }
+            }
+          }
+
+          & > .dropdown-menu {
+            @include media-breakpoint-up(lg) {
+              padding-top: $navbar-dropdown-padding-top;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+            & > .nav-item {
+              //
+            }
+          }
+        }
+      }
+
+      // Nav item general style
+      .nav-item {
+        &:hover {
+          & > .nav-link {
+            @include media-breakpoint-up(lg) {
+              color: $primary;
+            }
+          }
+
+          @include media-breakpoint-up(lg) {
+            & > .dropdown-menu {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+
+      // Nav link general style
+      .nav-link {
+        @include media-breakpoint-down(lg) {
+          padding-left: $container-padding-x;
+          padding-right: $container-padding-x;
+
+          &:hover {
+            color: $navbar-light-color;
+          }
+        }
+      }
+
+      // Dropdown menu general style
+      .dropdown-menu {
+        margin-top: 0;
+        border: 0;
+        @include media-breakpoint-up(lg) {
+          display: block;
+          opacity: 0;
+          visibility: hidden;
+          transition: all .25s ease-in-out;
+
+          &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            top: $navbar-dropdown-padding-top;
+            bottom: 0;
+            background-color: $navbar-bg;
+            box-shadow: $navbar-dropdown-shadow;
+            z-index: -1;
+          }
+
+          .nav-link {
+            padding-left: $grid-gutter-width / 2;
+            padding-right: $grid-gutter-width / 2;
+          }
+        }
+      }
+
+      // Dropdown toggle general style
+      .dropdown-toggle {
+        position: absolute;
+        top: .75rem;
+        right: $navbar-nav-link-padding-x;
+        width: .75rem;
+        height: 1rem;
+        padding: 0;
+        border: 0;
+
+        @include media-breakpoint-down(lg) {
+          right: $container-padding-x;
+          transform: rotate(270deg);
+          width: 1rem;
+        }
+
+        &::after {
+          position: relative;
+          display: block;
+          border: 0;
+          height: inherit;
+          bottom: .1875rem;
+          content: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='none'><g clip-path='url(#clip0_804_18)'><path d='M224.15 428.102C298.8 353.452 373.449 278.802 448.099 204.152L402.799 158.852L224.1 337.552L45.3 158.852L0 204.152C74.6838 278.836 149.47 353.422 224.15 428.102Z' fill='#{$primary}'/></g><defs><clipPath id='clip0_804_18'><rect width='448' height='512' fill='#{$white}'/></clipPath></defs></svg>"));
+        }
+      }
+    }
+  }
+}

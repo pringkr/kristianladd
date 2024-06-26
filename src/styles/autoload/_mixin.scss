@@ -1,0 +1,37 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+  &::placeholder {@content}
+}
+
+@mixin fa-solid {
+  display: none;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Solid"; // stylelint-disable-line font-family-no-missing-generic-family-keyword
+  font-weight: 900;
+}
+
+@mixin fa-regular {
+  display: none;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Regular"; // stylelint-disable-line font-family-no-missing-generic-family-keyword
+  font-weight: 400;
+}
+
+@mixin fa-brand {
+  display: none;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Brand"; // stylelint-disable-line font-family-no-missing-generic-family-keyword
+  font-weight: 400;
+}

@@ -1,0 +1,237 @@
+:root {
+  --profile-entry-text-size: 0.020;
+}
+
+@include media-breakpoint-down(xxl) {
+  :root {
+    --profile-entry-text-size: 0.015;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  :root {
+    --profile-entry-text-size: 0.008;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  :root {
+    --profile-entry-text-size: 0.005;
+  }
+}
+
+.profile-entry {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  overflow: hidden;
+
+  .catcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $klwhite;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .middle-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      transform: scale(calc(var(--profile-entry-text-size) * 25)) !important;
+      transform-origin: 50%;
+      font-size: 15rem;
+      letter-spacing: rem-calc(-8px);
+      white-space: nowrap;
+      color: $klwhite;
+      text-align: center;
+      text-transform: uppercase;
+
+      .line-wrapper {
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.profile-main {
+  background: $klwhite;
+
+  .intro {
+    color: $klblack;
+    font-weight: 400;
+
+    .line-wrapper {
+      overflow: hidden;
+    }
+  }
+
+  .tech-stack-outer {
+
+    h2 {
+      color: $klblack;
+      font-weight: 400;
+      margin-bottom: 20px;
+      font-size: 25px;
+    }
+
+    .tech-stack {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .tech-item {
+        figure {
+          @include mb(0);
+          width: 80px;
+
+          img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(1);
+          }
+        }
+      }
+    }
+  }
+
+  .services {
+    @include pt(100px);
+
+    @include media-breakpoint-down(sm) {
+      @include pt(50px);
+    }
+
+    .service {
+      overflow: hidden;
+      border-top: 1px solid $klblack;
+
+      .service-title {
+        @include py(20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include pr(10px);
+
+        h3 {
+          @include mb(0);
+          color: $klblack;
+          // font-size: rem-calc(38);
+          font-weight: 400;
+
+          // @include media-breakpoint-down(lg) {
+          //   font-size: rem-calc(34);
+          // }
+
+          // @include media-breakpoint-down(sm) {
+          //   font-size: rem-calc(30);
+          // }
+        }
+
+        svg {
+          @include media-breakpoint-down(lg) {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .service-content {
+        overflow: hidden;
+
+        .service-content-inner {
+          @include pb(30px);
+
+          @include media-breakpoint-down(lg) {
+            @include pb(10px);
+          }
+        }
+
+        p,
+        ul li {
+          color: $klblack;
+        }
+
+        .col-service-excerpt {
+          @include make-col(6);
+
+          @include media-breakpoint-down(lg) {
+            @include make-col(12);
+          }
+
+          p {
+            @extend .body-text-sm;
+            font-weight: 300;
+            &:last-child {
+              @include mb(0);
+            }
+          }
+        }
+
+        .col-service-breakdown {
+          @include make-col(4);
+
+          @include media-breakpoint-down(lg) {
+            @include make-col(12);
+          }
+
+          ul {
+            @include mb(0);
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            li {
+              @extend .h4;
+              color: $klblack;
+              @include mb(0);
+              font-weight: 400;
+            }
+          }
+        }
+
+        .tech-stack {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          @include media-breakpoint-down(sm) {
+            gap: 15px;
+          }
+
+          .tech-item {
+            figure {
+              @include mb(0);
+              width: 60px;
+
+              @include media-breakpoint-down(lg) {
+                width: 40px;
+              }
+
+              @include media-breakpoint-down(sm) {
+                width: 35px;
+              }
+
+              img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+                filter: grayscale(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
